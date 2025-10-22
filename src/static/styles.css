@@ -671,4 +671,48 @@ footer {
   text-align: center;
   padding: 15px;
   font-weight: bold;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+/* Announcements manager styles */
+.announcement-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  margin-bottom: 8px;
+  background: var(--surface);
+}
+
+.announcement-item-title {
+  font-weight: 700;
+  color: var(--primary);
+}
+.announcement-item-meta {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+}
+.announcement-item-message {
+  margin-top: 6px;
+}
+
+.announcement-item button {
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+.announcement-item button.danger { background: var(--error); color: white }
+.announcement-item button:not(.danger) { background: var(--primary); color: white }
+
+/* Make announcement form inputs match styling */
+#announcement-form input, #announcement-form textarea, #manage-announcement-form input, #manage-announcement-form textarea{
+  width:100%;
+  padding:8px;
+  border-radius:6px;
+  border:1px solid var(--border);
 }

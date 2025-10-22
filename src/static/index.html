@@ -24,6 +24,10 @@
             <span class="user-icon">👤</span>
             <span>Login</span>
           </button>
+          <button id="manage-announcements-button" class="icon-button hidden" title="Manage announcements">
+            📣
+            <span>Announcements</span>
+          </button>
           <div id="user-info" class="hidden">
             <span id="display-name"></span>
             <button id="logout-button">Logout</button>
@@ -114,6 +118,46 @@
           <input type="hidden" id="activity" value="" />
           <button type="submit">Register</button>
         </form>
+      </div>
+    </div>
+
+    <!-- Announcements Modal / Manager -->
+    <div id="announcements-modal" class="modal hidden">
+      <div class="modal-content" style="max-width:800px; width:95%;">
+        <span class="close-announcements-modal">&times;</span>
+        <h3>Manage Announcements</h3>
+        <div id="announcements-manager">
+          <div id="announcements-list">
+            <!-- populated dynamically -->
+          </div>
+
+          <div id="announcement-form">
+            <h4>Create / Edit Announcement</h4>
+            <form id="manage-announcement-form">
+              <input type="hidden" id="announcement-id" />
+              <div class="form-group">
+                <label for="announcement-title">Title</label>
+                <input id="announcement-title" required />
+              </div>
+              <div class="form-group">
+                <label for="announcement-message">Message</label>
+                <textarea id="announcement-message" rows="3" required></textarea>
+              </div>
+              <div class="form-group">
+                <label for="announcement-start">Start (optional, ISO local)</label>
+                <input id="announcement-start" placeholder="YYYY-MM-DDTHH:MM:SS" />
+              </div>
+              <div class="form-group">
+                <label for="announcement-expires">Expires (required, ISO local)</label>
+                <input id="announcement-expires" required placeholder="YYYY-MM-DDTHH:MM:SS" />
+              </div>
+              <div style="display:flex; gap:8px; justify-content:flex-end; margin-top:8px;">
+                <button type="submit" id="save-announcement">Save</button>
+                <button type="button" id="cancel-announcement">Cancel</button>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
 
