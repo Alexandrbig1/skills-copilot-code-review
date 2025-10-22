@@ -71,13 +71,6 @@ def _require_teacher(teacher_username: Optional[str]):
         raise HTTPException(status_code=401, detail="Invalid teacher credentials")
     return teacher
 
-def _require_teacher(teacher_username: Optional[str]):
-    if not teacher_username:
-        raise HTTPException(status_code=401, detail="Authentication required")
-    teacher = teachers_collection.find_one({"_id": teacher_username})
-    if not teacher:
-        raise HTTPException(status_code=401, detail="Invalid teacher credentials")
-    return teacher
 
 
 @router.post("")
