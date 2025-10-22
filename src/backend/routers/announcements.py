@@ -53,6 +53,10 @@ def active_announcements():
 
         # If start is set and in the future, skip
         if start and start > now:
+            continue
+        a["id"] = str(a.get("_id"))
+        results.append(a)
+    return results
 class AnnouncementUpdate(BaseModel):
     title: Optional[str] = None
     message: Optional[str] = None
