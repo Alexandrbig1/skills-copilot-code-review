@@ -54,7 +54,7 @@ def init_database():
             "title": "Activity registration is open",
             "message": "Activity registration is open until the end of the month. Don\'t miss your spot!",
             "start": None,  # optional start
-            "expires": (now.replace(microsecond=0) + __import__('datetime').timedelta(days=30)).isoformat(),
+            "expires": (now.replace(microsecond=0) + timedelta(days=30)).isoformat(),
             "created_at": now.replace(microsecond=0).isoformat()
         }
         announcements_collection.insert_one(example)
