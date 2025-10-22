@@ -5,7 +5,6 @@ from pydantic import BaseModel
 
 from ..database import announcements_collection, teachers_collection
 
-from ..database import announcements_collection, teachers_collection
 
 router = APIRouter(
     prefix="/announcements",
