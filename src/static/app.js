@@ -406,6 +406,12 @@ document.addEventListener("DOMContentLoaded", () => {
         rightDiv.appendChild(editBtn);
         rightDiv.appendChild(deleteBtn);
 
+        // Append left and right divs to item, then item to announcementsListDiv
+        item.appendChild(leftDiv);
+        item.appendChild(rightDiv);
+        announcementsListDiv.appendChild(item);
+        // Attach edit button event listener
+        editBtn.addEventListener('click', () => editAnnouncement(a.id));
   async function editAnnouncement(id){
     try{
       const res = await fetch(`/announcements/${encodeURIComponent(id)}`);
