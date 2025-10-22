@@ -140,19 +140,6 @@ def create_announcement(
     doc = announcements_collection.find_one({"_id": oid})
     doc["id"] = str(doc.get("_id"))
     return doc
-        oid = ObjectId(announcement_id)
-    except Exception:
-        raise HTTPException(status_code=400, detail="Invalid announcement id")
-
-    res = announcements_collection.update_one({"_id": oid}, {"$set": update})
-    if res.matched_count == 0:
-        raise HTTPException(status_code=404, detail="Announcement not found")
-
-    doc = announcements_collection.find_one({"_id": oid})
-    doc["id"] = str(doc.get("_id"))
-    return doc
-
-
 @router.delete("/{announcement_id}")
 def delete_announcement(announcement_id: str, teacher_username: Optional[str] = Query(None)):
     _require_teacher(teacher_username)
